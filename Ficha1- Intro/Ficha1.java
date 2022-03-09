@@ -1,4 +1,4 @@
-public class Ficha1_Exs {
+public class Ficha1 {
 
     public double celsiusparaFarenheit(double graus){
         return graus*1.8 + 32;
