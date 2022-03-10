@@ -24,10 +24,11 @@ public class Ficha1 {
             System.out.println("B: " +b+ " A: " +a+ "Média: "+ media);
     }
 
-    public long factorial(int num){
-        int sum=1;
-        for (int i=0; i<num; i++){
-            sum*=num-i;
+    public double factorial(int num){
+        double sum=1;
+        for (int i=1; i<=num; i++){
+            sum = sum*i;
+            //System.out.println("SUM: " + sum);
         }
         return sum;
     }
