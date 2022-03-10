@@ -54,8 +54,12 @@ public class TestePrograma{
                 break;
 
             case (6):
-                System.out.println("Fatorial de N");
-                System.out.println(f1.factorial(Integer.parseInt(args[0])));
+                System.out.print("Fatorial de ");
+                if(args.length==0) {
+                    int num = sc.nextInt();
+                    System.out.println(f1.factorial(num));
+                }
+                else System.out.println(f1.factorial(Integer.parseInt(args[0])));
                 break;
 
             case (7):
