@@ -88,15 +88,15 @@ public class LinhadeEncomenda {
     /* toString - chapador de massa
     public String toString() {
         return "LinhadeEncomenda" +
-                "\nreferência='" + referencia +
-                "\ndescricao='" + descricao +
-                "\nprecoBruto=" + precoBruto +
-                "\nquantidade=" + quantidade +
-                "\nimposto=" + imposto +
-                "\ndesconto=" + desconto;
+                "\nreferência='" + this.referencia +
+                "\ndescricao='" + this.descricao +
+                "\nprecoBruto=" + this.precoBruto +
+                "\nquantidade=" + this.quantidade +
+                "\nimposto=" + this.imposto +
+                "\ndesconto=" + this.desconto;
     }*/
 
-    //toString +complexo mas melhor
+    //toString melhor
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("### Linha de Encomenda ###")
