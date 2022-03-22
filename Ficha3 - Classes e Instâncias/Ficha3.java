@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ficha3 {
@@ -6,7 +7,7 @@ public class Ficha3 {
 
         Scanner sc= new Scanner(System.in);
 
-        System.out.println("### FICHA 3 - CLASSES E INSTÂNCIAS ###\n Exercício (1-7-9)");
+        System.out.println("### FICHA 3 - CLASSES E INSTÂNCIAS ###\n Exercício (1-7-8-9)");
         int ex = sc.nextInt();
 
         switch (ex){
@@ -79,7 +80,52 @@ public class Ficha3 {
                 System.out.println("Valor de Desconto: " + enc.calculaValorDesconto());
                 System.out.println("Valor da Linha: " + enc.calculaValorLinhaEnc());
                 break;
+            case(8):
 
+                System.out.println("Ex8 : Encomendas");
+                System.out.print("Nome do Cliente: ");
+                String clean = sc.nextLine();
+                String n_cliente = sc.nextLine();
+                System.out.print("Número Fiscal: ");
+                int n_fiscal = sc.nextInt();
+                System.out.print("Morada do Cliente: ");
+                clean = sc.nextLine();
+                String  morada = sc.nextLine();
+                System.out.print("Número da Encomenda: ");
+                int n_enc = sc.nextInt();
+                System.out.print("Data da Encomenda: ");
+                clean = sc.nextLine();
+                String data = sc.nextLine();
+
+                LinhadeEncomenda line1 = new LinhadeEncomenda("Caixa 1019", "dimensões 10x19 cm", 1, 100, 23, 30);
+                LinhadeEncomenda line2 = new LinhadeEncomenda("Caixa 2040", "dimensões 20x40 cm", 2, 200, 23, 33);
+                LinhadeEncomenda line3 = new LinhadeEncomenda("Caixa 3050", "dimensões 30x50 cm", 3, 300, 23, 35);
+                LinhadeEncomenda line4 = new LinhadeEncomenda("Caixa 4050", "dimensões 40x50 cm", 4, 50, 23, 20);
+
+                ArrayList<LinhadeEncomenda> enc_lines = new ArrayList<>();
+
+                enc_lines.add(line1.clone());
+                enc_lines.add(line2.clone());
+                enc_lines.add(line3.clone());
+
+                Encomenda enc8_1 = new Encomenda(n_cliente,n_fiscal,morada,n_enc,data,enc_lines);
+                Encomenda enc8_2 = new Encomenda("Rogério",123456789,"Rua Sesamo",5,"25/12/2020",enc_lines);
+
+                System.out.println(enc8_1.toString());
+                System.out.println(enc8_2.toString());
+
+                System.out.println("Enc1 - nº total de produtos: "+enc8_1.numeroTotalProdutos());
+                System.out.println("Enc1 - valor total: "+enc8_1.calculaValorTotal());
+                System.out.println("Enc1 - valor de desconto: "+enc8_1.calculaValorDesconto());
+                System.out.println("\nExiste produto caixa 1019? "+enc8_1.existeProdutoEncomenda("Caixa 1019"));
+                System.out.println("\nAdiciona line4"+ line4.toString());
+                enc8_1.adicionaLinha(line4);
+                System.out.println("\nRemove line1"+ line1.toString());
+                enc8_1.removeProduto("Caixa 1019");
+
+                System.out.println(enc8_1.toString());
+
+                break;
             case(9):
                 System.out.println("Ex9 : Triangulo");
                 System.out.println("[Ponto1]");
